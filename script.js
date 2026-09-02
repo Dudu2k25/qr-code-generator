@@ -2,10 +2,13 @@ const input = document.querySelector("#texto");
 const botaoGerar = document.querySelector("#gerar");
 const botaoLimpar = document.querySelector("#limpar");
 const botaoBaixar = document.querySelector("#baixar");
+
+const inputCor = document.querySelector("#cor");
+const inputTamanho = document.querySelector("#tamanho");
+
 const qrcode = document.querySelector("#qrcode");
 
 
-// FUNÇÃO PARA GERAR O QR CODE
 function gerarQRCode() {
 
     const texto = input.value.trim();
@@ -15,21 +18,24 @@ function gerarQRCode() {
         return;
     }
 
+    const cor = inputCor.value;
+    const tamanho = Number(inputTamanho.value);
+
     qrcode.innerHTML = "";
 
     new QRCode(qrcode, {
         text: texto,
-        width: 200,
-        height: 200
+        width: tamanho,
+        height: tamanho,
+        colorDark: cor,
+        colorLight: "#ffffff"
     });
 }
 
 
-// BOTÃO GERAR
 botaoGerar.addEventListener("click", gerarQRCode);
 
 
-// ENTER PARA GERAR
 input.addEventListener("keydown", (event) => {
 
     if (event.key === "Enter") {
@@ -39,7 +45,6 @@ input.addEventListener("keydown", (event) => {
 });
 
 
-// BOTÃO LIMPAR
 botaoLimpar.addEventListener("click", () => {
 
     input.value = "";
@@ -48,7 +53,6 @@ botaoLimpar.addEventListener("click", () => {
 });
 
 
-// BOTÃO BAIXAR
 botaoBaixar.addEventListener("click", () => {
 
     const imagem = qrcode.querySelector("img");

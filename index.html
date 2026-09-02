@@ -18,8 +18,28 @@
         <input 
             type="text" 
             id="texto"
-            placeholder="Digite uma URL ou texto"
-        >
+            placeholder="Digite uma URL ou texto">
+
+             <div class="opcoes">
+
+    <div class="opcao">
+        <label for="cor">Cor do QR Code</label>
+        <input type="color" id="cor" value="#000000">
+    </div>
+
+    <div class="opcao">
+        <label for="tamanho">Tamanho</label>
+
+        <select id="tamanho">
+            <option value="150">150x150</option>
+            <option value="200" selected>200x200</option>
+            <option value="250">250x250</option>
+            <option value="300">300x300</option>
+        </select>
+    </div>
+
+</div>
+
             <div class="botoes">
             <button id="gerar">Gerar QR Code</button>
             <button id="limpar">Limpar</button>

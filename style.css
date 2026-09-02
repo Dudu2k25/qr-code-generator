@@ -175,4 +175,42 @@ button {
     }
 
 }
+.opcoes {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+.opcao {
+    flex: 1;
+}
+.opcao label {
+    display: flex;
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #94a3b8;
+}
+#color {
+    width: 100%;
+    height: 45px;
+    padding: 3px;
+    cursor: pointer;
+}
+#tamanho {
+    width: 100%;
+    height: 45px;
+    padding: 0 10px;
+    border: 2px solid #334155;
+    border-radius: 10px;
+    background: #0f172a;
+    color: white;
+    outline: none;
+}
+#tamanho:focus {
+    border-color: #38bdf8;
+}
+@media (max-width: 480px) {
+    .opcoes {
+        flex-direction: column;
+    }
+}
 
